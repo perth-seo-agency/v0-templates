@@ -1,0 +1,236 @@
+<repomix>This file is a merged representation of a subset of the codebase, containing specifically included files and files not matching ignore patterns, combined into a single document by Repomix.
+The content has been processed where comments have been removed, empty lines have been removed, content has been formatted for parsing in xml style, security check has been disabled.<file_summary>This section contains a summary of this file.<purpose>This file contains a packed representation of the entire repository&apos;s contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.</purpose><file_format>The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files, each consisting of:
+  - File path as an attribute
+  - Full contents of the file</file_format><usage_guidelines>- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.</usage_guidelines><notes>- Some files may have been excluded based on .gitignore rules and Repomix&apos;s configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Only files matching these patterns are included: *.*
+- Files matching these patterns are excluded: **/node_modules/**, node_modules/, **/.next/**, .next/, __pycache__/, **/__pycache__/**, .vscode/**, .cursor/**, .cursor/.*, monioring/.*, *repomix/**, *science/**, *DS_Store*, *.mdc, *.xml, .env.example, temp, *.pyc, **/*.pyc, backend/migrations/versions/**, *.md, .gitignore, .gitattributes, .augmentignore, docs, .git/**, **/package-lock.json, *.svg, documentation/*.md, .dockerignore, repomix-output.txt.xml, *.txt.xml, *.xml.txt, scripts/, example-crawl-data/**, admin-dashboard.html, favicon.ico, logo192.png, robots.txt, manifest.json, frontend/README.md, venv, venv/**
+- Code comments have been removed from supported file types
+- Empty lines have been removed from all files
+- Content has been formatted for parsing in xml style
+- Security check has been disabled - content may contain sensitive information
+- Files are sorted by Git change count (files with more changes are at the bottom)</notes><additional_info></additional_info></file_summary><directory_structure>components.json
+next.config.mjs
+package.json
+pnpm-lock.yaml
+postcss.config.mjs
+tailwind.config.js
+tsconfig.json</directory_structure><files>This section contains the contents of the repository&apos;s files.<file path="components.json">{
+  &quot;$schema&quot;: &quot;https://ui.shadcn.com/schema.json&quot;,
+  &quot;style&quot;: &quot;default&quot;,
+  &quot;rsc&quot;: true,
+  &quot;tsx&quot;: true,
+  &quot;tailwind&quot;: {
+    &quot;config&quot;: &quot;tailwind.config.ts&quot;,
+    &quot;css&quot;: &quot;app/globals.css&quot;,
+    &quot;baseColor&quot;: &quot;neutral&quot;,
+    &quot;cssVariables&quot;: true,
+    &quot;prefix&quot;: &quot;&quot;
+  },
+  &quot;aliases&quot;: {
+    &quot;components&quot;: &quot;@/components&quot;,
+    &quot;utils&quot;: &quot;@/lib/utils&quot;,
+    &quot;ui&quot;: &quot;@/components/ui&quot;,
+    &quot;lib&quot;: &quot;@/lib&quot;,
+    &quot;hooks&quot;: &quot;@/hooks&quot;
+  },
+  &quot;iconLibrary&quot;: &quot;lucide&quot;
+}</file><file path="next.config.mjs">/** @type {import(&apos;next&apos;).NextConfig} */
+const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    unoptimized: true,
+  },
+}
+
+export default nextConfig</file><file path="package.json">{
+  &quot;name&quot;: &quot;my-v0-project&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;private&quot;: true,
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;next dev&quot;,
+    &quot;build&quot;: &quot;next build&quot;,
+    &quot;start&quot;: &quot;next start&quot;,
+    &quot;lint&quot;: &quot;next lint&quot;
+  },
+  &quot;dependencies&quot;: {
+    &quot;@hookform/resolvers&quot;: &quot;^3.9.1&quot;,
+    &quot;@radix-ui/react-accordion&quot;: &quot;1.2.2&quot;,
+    &quot;@radix-ui/react-alert-dialog&quot;: &quot;1.1.4&quot;,
+    &quot;@radix-ui/react-aspect-ratio&quot;: &quot;1.1.1&quot;,
+    &quot;@radix-ui/react-avatar&quot;: &quot;1.1.2&quot;,
+    &quot;@radix-ui/react-checkbox&quot;: &quot;1.1.3&quot;,
+    &quot;@radix-ui/react-collapsible&quot;: &quot;1.1.2&quot;,
+    &quot;@radix-ui/react-context-menu&quot;: &quot;2.2.4&quot;,
+    &quot;@radix-ui/react-dialog&quot;: &quot;1.1.4&quot;,
+    &quot;@radix-ui/react-dropdown-menu&quot;: &quot;2.1.4&quot;,
+    &quot;@radix-ui/react-hover-card&quot;: &quot;1.1.4&quot;,
+    &quot;@radix-ui/react-label&quot;: &quot;2.1.1&quot;,
+    &quot;@radix-ui/react-menubar&quot;: &quot;1.1.4&quot;,
+    &quot;@radix-ui/react-navigation-menu&quot;: &quot;1.2.3&quot;,
+    &quot;@radix-ui/react-popover&quot;: &quot;1.1.4&quot;,
+    &quot;@radix-ui/react-progress&quot;: &quot;1.1.1&quot;,
+    &quot;@radix-ui/react-radio-group&quot;: &quot;1.2.2&quot;,
+    &quot;@radix-ui/react-scroll-area&quot;: &quot;1.2.2&quot;,
+    &quot;@radix-ui/react-select&quot;: &quot;2.1.4&quot;,
+    &quot;@radix-ui/react-separator&quot;: &quot;1.1.1&quot;,
+    &quot;@radix-ui/react-slider&quot;: &quot;1.2.2&quot;,
+    &quot;@radix-ui/react-slot&quot;: &quot;1.1.1&quot;,
+    &quot;@radix-ui/react-switch&quot;: &quot;1.1.2&quot;,
+    &quot;@radix-ui/react-tabs&quot;: &quot;1.1.2&quot;,
+    &quot;@radix-ui/react-toast&quot;: &quot;1.2.4&quot;,
+    &quot;@radix-ui/react-toggle&quot;: &quot;1.1.1&quot;,
+    &quot;@radix-ui/react-toggle-group&quot;: &quot;1.1.1&quot;,
+    &quot;@radix-ui/react-tooltip&quot;: &quot;1.1.6&quot;,
+    &quot;autoprefixer&quot;: &quot;^10.4.20&quot;,
+    &quot;class-variance-authority&quot;: &quot;^0.7.1&quot;,
+    &quot;clsx&quot;: &quot;^2.1.1&quot;,
+    &quot;cmdk&quot;: &quot;1.0.4&quot;,
+    &quot;date-fns&quot;: &quot;4.1.0&quot;,
+    &quot;embla-carousel-react&quot;: &quot;8.5.1&quot;,
+    &quot;input-otp&quot;: &quot;1.4.1&quot;,
+    &quot;lucide-react&quot;: &quot;^0.454.0&quot;,
+    &quot;next&quot;: &quot;15.2.4&quot;,
+    &quot;next-themes&quot;: &quot;^0.4.4&quot;,
+    &quot;react&quot;: &quot;^19&quot;,
+    &quot;react-day-picker&quot;: &quot;8.10.1&quot;,
+    &quot;react-dom&quot;: &quot;^19&quot;,
+    &quot;react-hook-form&quot;: &quot;^7.54.1&quot;,
+    &quot;react-resizable-panels&quot;: &quot;^2.1.7&quot;,
+    &quot;recharts&quot;: &quot;2.15.0&quot;,
+    &quot;sonner&quot;: &quot;^1.7.1&quot;,
+    &quot;tailwind-merge&quot;: &quot;^2.5.5&quot;,
+    &quot;tailwindcss-animate&quot;: &quot;^1.0.7&quot;,
+    &quot;vaul&quot;: &quot;^0.9.6&quot;,
+    &quot;zod&quot;: &quot;^3.24.1&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@types/node&quot;: &quot;^22&quot;,
+    &quot;@types/react&quot;: &quot;^19&quot;,
+    &quot;@types/react-dom&quot;: &quot;^19&quot;,
+    &quot;postcss&quot;: &quot;^8&quot;,
+    &quot;tailwindcss&quot;: &quot;^3.4.17&quot;,
+    &quot;typescript&quot;: &quot;^5&quot;
+  }
+}</file><file path="pnpm-lock.yaml">lockfileVersion: &apos;9.0&apos;
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false</file><file path="postcss.config.mjs">/** @type {import(&apos;postcss-load-config&apos;).Config} */
+const config = {
+  plugins: {
+    tailwindcss: {},
+  },
+};
+
+export default config;</file><file path="tailwind.config.js">module.exports = {
+  darkMode: [&quot;class&quot;],
+  content: [&quot;./pages/**/*.{ts,tsx}&quot;, &quot;./components/**/*.{ts,tsx}&quot;, &quot;./app/**/*.{ts,tsx}&quot;, &quot;./src/**/*.{ts,tsx}&quot;, &quot;*.{js,ts,jsx,tsx,mdx}&quot;],
+  theme: {
+    container: {
+      center: true,
+      padding: &quot;2rem&quot;,
+      screens: {
+        &quot;2xl&quot;: &quot;1400px&quot;,
+      },
+    },
+    extend: {
+      colors: {
+        border: &quot;hsl(var(--border))&quot;,
+        input: &quot;hsl(var(--input))&quot;,
+        ring: &quot;hsl(var(--ring))&quot;,
+        background: &quot;hsl(var(--background))&quot;,
+        foreground: &quot;hsl(var(--foreground))&quot;,
+        primary: {
+          DEFAULT: &quot;hsl(var(--primary))&quot;,
+          foreground: &quot;hsl(var(--primary-foreground))&quot;,
+        },
+        secondary: {
+          DEFAULT: &quot;hsl(var(--secondary))&quot;,
+          foreground: &quot;hsl(var(--secondary-foreground))&quot;,
+        },
+        destructive: {
+          DEFAULT: &quot;hsl(var(--destructive))&quot;,
+          foreground: &quot;hsl(var(--destructive-foreground))&quot;,
+        },
+        muted: {
+          DEFAULT: &quot;hsl(var(--muted))&quot;,
+          foreground: &quot;hsl(var(--muted-foreground))&quot;,
+        },
+        accent: {
+          DEFAULT: &quot;hsl(var(--accent))&quot;,
+          foreground: &quot;hsl(var(--accent-foreground))&quot;,
+        },
+        popover: {
+          DEFAULT: &quot;hsl(var(--popover))&quot;,
+          foreground: &quot;hsl(var(--popover-foreground))&quot;,
+        },
+        card: {
+          DEFAULT: &quot;hsl(var(--card))&quot;,
+          foreground: &quot;hsl(var(--card-foreground))&quot;,
+        },
+      },
+      borderRadius: {
+        lg: &quot;var(--radius)&quot;,
+        md: &quot;calc(var(--radius) - 2px)&quot;,
+        sm: &quot;calc(var(--radius) - 4px)&quot;,
+      },
+      keyframes: {
+        &quot;accordion-down&quot;: {
+          from: { height: 0 },
+          to: { height: &quot;var(--radix-accordion-content-height)&quot; },
+        },
+        &quot;accordion-up&quot;: {
+          from: { height: &quot;var(--radix-accordion-content-height)&quot; },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        &quot;accordion-down&quot;: &quot;accordion-down 0.2s ease-out&quot;,
+        &quot;accordion-up&quot;: &quot;accordion-up 0.2s ease-out&quot;,
+      },
+    },
+  },
+  plugins: [require(&quot;tailwindcss-animate&quot;)],
+}</file><file path="tsconfig.json">{
+  &quot;compilerOptions&quot;: {
+    &quot;lib&quot;: [&quot;dom&quot;, &quot;dom.iterable&quot;, &quot;esnext&quot;],
+    &quot;allowJs&quot;: true,
+    &quot;target&quot;: &quot;ES6&quot;,
+    &quot;skipLibCheck&quot;: true,
+    &quot;strict&quot;: true,
+    &quot;noEmit&quot;: true,
+    &quot;esModuleInterop&quot;: true,
+    &quot;module&quot;: &quot;esnext&quot;,
+    &quot;moduleResolution&quot;: &quot;bundler&quot;,
+    &quot;resolveJsonModule&quot;: true,
+    &quot;isolatedModules&quot;: true,
+    &quot;jsx&quot;: &quot;preserve&quot;,
+    &quot;incremental&quot;: true,
+    &quot;plugins&quot;: [
+      {
+        &quot;name&quot;: &quot;next&quot;
+      }
+    ],
+    &quot;paths&quot;: {
+      &quot;@/*&quot;: [&quot;./*&quot;]
+    }
+  },
+  &quot;include&quot;: [&quot;next-env.d.ts&quot;, &quot;**/*.ts&quot;, &quot;**/*.tsx&quot;, &quot;.next/types/**/*.ts&quot;],
+  &quot;exclude&quot;: [&quot;node_modules&quot;]
+}</file></files></repomix>
